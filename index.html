@@ -15,35 +15,56 @@
         <div class="botoes">
             <table>
                 <tr>
-                    <td><button>7</button></td>
-                    <td><button>8</button></td>
-                    <td><button>9</button></td>
-                    <td><button>/</button></td>
+                    <td><button onclick="inserir('7')">7</button></td>
+                    <td><button onclick="inserir('8')">8</button></td>
+                    <td><button onclick="inserir('9')">9</button></td>
+                    <td><button onclick="inserir('/')">/</button></td>
                 </tr>
                 <tr>
-                    <td><button>4</button></td>
-                    <td><button>5</button></td>
-                    <td><button>6</button></td>
-                    <td><button>X</button></td>
+                    <td><button onclick="inserir('4')">4</button></td>
+                    <td><button onclick="inserir('5')">5</button></td>
+                    <td><button onclick="inserir('6')">6</button></td>
+                    <td><button onclick="inserir('*')">X</button></td>
                 </tr>
                 <tr>
-                    <td><button>1</button></td>
-                    <td><button>2</button></td>
-                    <td><button>3</button></td>
-                    <td><button>-</button></td>
+                    <td><button onclick="inserir('1')">1</button></td>
+                    <td><button onclick="inserir('2')">2</button></td>
+                    <td><button onclick="inserir('3')">3</button></td>
+                    <td><button onclick="inserir('-')">-</button></td>
                 </tr>
                 <tr>
-                    <td><button id="clean">C</button></td>
-                    <td><button>0</button></td>
-                    <td><button>,</button></td>
-                    <td><button>+</button></td>
+                    <td><button id="clean" onclick="clean()">C</button></td>
+                    <td><button onclick="inserir('0')">0</button></td>
+                    <td><button onclick="inserir('.')">,</button></td>
+                    <td><button onclick="inserir('+')">+</button></td>
                 </tr>
                 <tr>
-                    <td colspan="4"><button id="igual">=</button></td>
+                    <td colspan="4"><button id="igual" onclick="calcular()">=</button></td>
                 </tr>
             </table>
         </div>
     </div>
+
+    <script>
+        function inserir(num1){
+            var display = window.document.querySelector('span').innerHTML;
+            window.document.querySelector('span').innerHTML = display + num1;
+
+            
+
+        }
+        function clean(){
+            window.document.querySelector('span').innerHTML = '';
+        }
+        function calcular(){
+            var display = window.document.querySelector('span').innerHTML;
+            if(display){
+                window.document.querySelector('span').innerHTML = eval(display);
+            }
+        }
+        
+        
+    </script>
     
 </body>
 </html>
